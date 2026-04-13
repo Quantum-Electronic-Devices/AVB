@@ -1,0 +1,203 @@
+% Disbaled until enumitem is either stable in the LaTex kernel or the package is updated to work with the new kernel
+%\DocumentMetadata{%
+%  pdfstandard=A-3b,%
+%  lang=de,
+%  pdfversion=1.7,% 2.0 is possible as well, but some validators don't support that yet
+%}
+\documentclass[%
+    a4paper,%
+    10pt,
+%    draft  % Use draft to find overfull boxes, this seems to break the hyperref package
+]{scrartcl}
+
+\usepackage[pagenumber=no]{scrletter}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+
+\usepackage{enumitem}
+\usepackage[%
+  top=1.5cm,%
+  bottom=2.4cm,%
+  left=1.5cm,%
+  right=1.5cm,%
+  headheight = 1.74cm,%
+  headsep = 1cm,%
+  footskip=1cm,
+  includeheadfoot%
+]{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{%
+mode=match,
+text-family-to-math = true,%
+text-series-to-math = true%
+}
+
+% Font setup
+\usepackage[default,scale=0.9]{opensans}
+\usepackage{lastpage}
+
+%%%%%%%%%%%%%%%%%%%%%
+% color definitions %
+%%%%%%%%%%%%%%%%%%%%%
+\definecolor{highlightColor}{HTML}{ff2d21}% QED red
+\definecolor{footnotecolor}{rgb}{0.45,0.45,0.45}% dark grey
+%%%%%%%%%%%%%%%%%%%%%
+% end color definitions %
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+% commands definitions %
+%%%%%%%%%%%%%%%%%%%%%
+
+\def\EditDate{%
+2026-04-13%
+}
+
+\def\DocType{%
+Allgemeine Verkaufsbedingungen
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+% end variable definitions %
+%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+    hidelinks,
+    pdftitle={\DocType Quantum Electronic Devices GmbH},
+}
+
+\KOMAoptions{refline=narrow} % Aligns the list/text with the header
+
+\usepackage{scrlayer-scrpage}
+\ihead{%
+  \includegraphics[width=9cm]{images/qed_logo.pdf}%
+}
+\ohead{%
+  \color{footnotecolor} \DocType
+}
+\ofoot{%
+  \color{footnotecolor} Stand: \EditDate
+}
+\renewcommand*\pagemark{{\thepage~/~\pageref*{LastPage}}}
+\addtokomafont{pageheadfoot}{\upshape}
+\setkomavar{firstfoot}{\centering\pagemark}
+
+\setlist{leftmargin=15pt}
+\setlist[enumerate,1]{label = \textbf{\arabic*.},ref = \arabic*}
+\setlist[enumerate,2]{label = \theenumi.\arabic*, ref = \theenumi.\arabic*, topsep=4pt}
+\setlist[enumerate,3]{label = \roman*), ref = \theenumii.\roman*}
+
+\begin{document}
+  \DocType der Quantum Electronic Devices GmbH
+
+  \begin{multicols}{2}
+    \begin{enumerate}
+     \item \textbf{Geltungsbereich}%
+      \begin{enumerate}
+        \item Die vorliegenden allgemeinen Verkaufsbedingungen (AVB) gelten für alle unsere Geschäftsbeziehungen mit unseren Kunden („Käufer“). Die allgemeinen Verkaufsbedingungen gelten nur, sofern der Käufer Unternehmer (§ 14 BGB), eine juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen im Sinne von § 310 Absatz 1 BGB ist.
+        \item Unsere allgemeinen Verkaufsbedingungen gelten ausschließlich. Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Käufers werden nur dann und insoweit Vertragsbestandteil, als wir ihrer Geltung ausdrücklich zugestimmt haben. Dieses Zustimmungserfordernis gilt auch dann, wenn der Käufer im Rahmen der Bestellung auf seine AGB verweist und wir den AGB nicht ausdrücklich widersprochen haben.
+        \item Diese allgemeinen Verkaufsbedingungen gelten für Verträge über den Verkauf und/oder die Lieferung beweglicher Sachen („Ware“). Unberücksichtigt bleibt, ob wir die Ware selbst herstellen oder bei Zulieferern einkaufen (§§ 433, 650 BGB). Die allgemeinen Verkaufsbedingungen gelten, sofern nicht anderweitig vereinbart, in der zum Zeitpunkt der Bestellung des Käufers gültigen bzw. in der ihm zuletzt in Textform mitgeteilten Fassung als Rahmenvereinbarung auch für gleichartige künftige Verträge, ohne dass wir als Verkäufer wieder auf sie einzelfallbezogen hinweisen müssten.
+        \item Im Einzelfall getroffene, individuelle Vereinbarungen mit dem Käufer (einschließlich Nebenabreden, Ergänzungen und Änderungen) und Angaben in unserer Auftragsbestätigung haben Vorrang vor diesen allgemeinen Verkaufsbedingungen. Für den Inhalt derartiger Vereinbarungen ist, vorbehaltlich des Gegenbeweises, ein schriftlicher Vertrag bzw. unsere schriftliche Bestätigung maßgebend.
+        \item Rechtserhebliche Erklärungen sowie Anzeigen des Käufers hinsichtlich des Vertrags (z.B. Mängelanzeigen, Fristsetzungen, Rücktritt oder Minderung) sind schriftlich, also in Schrift- und Textform (z.B. Brief oder E-Mail) abzugeben. Weitergehende gesetzliche Formvorschriften sowie weitere Nachweise (ggf. bei Zweifeln über die Legitimation des Erklärenden) bleiben unberührt.
+        \item Sofern Hinweise auf die Geltung gesetzlicher Vorschriften erfolgen, ist zu beachten, dass diesen lediglich eine klarstellende Bedeutung zukommt. Es gelten die gesetzlichen Vorschriften - auch wenn keine entsprechende Klarstellung erfolgt ist - in den Grenzen, in denen sie nicht durch die allgemeinen Verkaufsbedingungen abgeändert oder ausgeschlossen werden.
+      \end{enumerate}
+      \item \textbf{Angebot und Vertragsabschluss}%
+      \begin{enumerate}
+       \item Unsere Angebote sind freibleibend und unverbindlich. Dies gilt auch dann, wenn wir dem Käufer Kataloge, technische Dokumentationen (z.B. Zeichnungen, Pläne, Berechnungen, Kalkulationen, Verweisungen auf DIN-Normen) sowie sonstige Produktbeschreibungen oder Unterlagen (auch in elektronischer Form), überlassen haben. An allen in Zusammenhang mit der Auftragserteilung dem Käufer überlassenen Unterlagen behalten wir uns Eigentums- und Urheberrechte vor.
+       \item \label{ref:quotes} Bei der Bestellung der Ware durch den Käufer handelt es sich um ein unverbindliches Vertragsangebot nach § 145 BGB. Für den Fall, dass sich aus der Bestellung nichts Anderweitiges ergibt, sind wir berechtigt, dieses Vertragsangebot innerhalb von zwei Wochen nach dessen Zugang bei uns anzunehmen.
+       \item Die Annahme des Vertragsangebots von Seiten des Käufers kann entweder schriftlich (z.B. durch eine Auftragsbestätigung) oder durch Auslieferung der Ware an den Käufer erklärt werden.
+      \end{enumerate}
+      \item \textbf{Preise und Zahlungsvereinbarungen}%
+        \begin{enumerate}
+         \item Sofern im Einzelfall schriftlich nichts Gegenteiliges vereinbart wird, gelten unsere jeweils zum Zeitpunkt des Vertragsschlusses aktuellen Preise ab Lager, zuzüglich der gesetzlichen Umsatzsteuer. Die Kosten der Verpackung werden gesondert in Rechnung gestellt.
+         \item Im Rahmen eines Versendungskaufs hat der Käufer die Transportkosten ab Lager und die Kosten einer ggf. vom Käufer gewünschten Transportversicherung zu tragen. Für den Fall, dass wir nicht die im Einzelfall entstandenen Transportkosten in Rechnung stellen, erheben wir eine Transportkostenpauschale (ausschließlich Transportversicherung) in Höhe von zehn Euro. Etwaige Zölle, Gebühren, Steuern und sonstige öffentliche Abgaben hat der Käufer zu tragen.
+         \item Die Zahlung des Kaufpreises hat ausschließlich per Überweisung zu erfolgen. Der Abzug von Skonto ist nur bei schriftlicher besonderer Vereinbarung zulässig.
+         \item Sofern nichts anderes vereinbart wurde, ist der Kaufpreis fällig und zu zahlen innerhalb von vierzehn Tagen ab Rechnungsstellung und Lieferung bzw. Abnahme der Ware. Wir sind jedoch, auch im Rahmen einer laufenden Geschäftsbeziehung, jederzeit berechtigt, eine Lieferung ganz oder teilweise nur gegen Vorkasse durchzuführen. Einen entsprechenden Vorbehalt erklären wir spätestens mit der Auftragsbestätigung.
+         \item Der Käufer kommt in Verzug, wenn die vorstehende Zahlungsfrist abläuft. Während des Verzugs ist der Kaufpreis zum jeweils geltenden gesetzlichen Verzugszinssatz nach § 288 Absatz 2 BGB in Höhe von neun Prozentpunkten über dem jeweiligen Basiszinssatz zu verzinsen. Die Geltendmachung eines weitergehenden Verzugsschadens behalten wir uns vor. Gegenüber Kaufleuten bleibt unser Anspruch auf den kaufmännischen Fälligkeitszins nach § 353 HGB unberührt.
+         \item Sofern nach Vertragsschluss abzusehen ist, dass unser Anspruch auf Zahlung des Kaufpreises aufgrund von mangelnder Leistungsfähigkeit von Seiten des Käufers gefährdet ist (z.B. durch Antrag auf Eröffnung eines Insolvenzverfahrens), sind wir nach den gesetzlichen Vorschriften zur Leistungsverweigerung und, gegebenenfalls nach Fristsetzung, zum Rücktritt vom Vertrag berechtigt (§ 321 BGB). Bei Verträgen, bei welchen die Herstellung unvertretbarer Sachen (Einzelanfertigungen) geschuldet ist, können wir sofort einen Rücktritt erklären. Die gesetzlichen Vorschriften über die Entbehrlichkeit einer Fristsetzung bleiben insoweit unberührt.
+        \end{enumerate}
+        \item \textbf{Zurückbehaltungsrechte}\\
+        Aufrechnungs- oder Zurückbehaltungsrechte stehen dem Käufer nur für den Fall zu, dass sein Anspruch rechtskräftig festgestellt oder unbestritten ist, und sein Gegenanspruch auf dem gleichen Vertragsverhältnis beruht. Für den Fall, dass Mängel im Rahmen der Lieferung auftreten, bleiben die Gegenrechte des Käufers, insbesondere gemäß Ziffer \ref{ref:nacherfuellung} Satz 2 dieser allgemeinen Verkaufsbedingungen, unberührt.
+        \item \textbf{Lieferfrist und Lieferverzug}%
+        \begin{enumerate}
+         \item Die Lieferfrist wird individuell vereinbart bzw. von uns bei Annahme der Bestellung angegeben. Sofern dies nicht der Fall ist, beträgt die Lieferfrist ca. zwei Wochen ab Vertragsschluss.
+         \item Für den Fall, dass wir vertraglich vereinbarte Lieferfristen aus Gründen, die wir nicht zu vertreten haben, nicht einhalten können, haben wir den Käufer über diesen Umstand unverzüglich zu informieren und parallel die voraussichtliche bzw. neue Lieferfrist mitzuteilen. Sofern eine verspätete Lieferung aufgrund von Nichtverfügbarkeit der Leistung auch innerhalb der neu bekanntgegebenen Lieferfrist nicht erfolgen kann, sind wir berechtigt, ganz oder teilweise vom Vertrag zurückzutreten; eine bereits erbrachte Gegenleistung des Käufers (in Form der Kaufpreiszahlung) haben wir unverzüglich zu erstatten. Die Nichtverfügbarkeit der Leistung ist beispielsweise dann gegeben, wenn eine nicht rechtzeitige Selbstbelieferung durch unseren Zulieferer stattgefunden hat, wenn wir ein kongruentes Deckungsgeschäft abgeschlossen haben, wenn sonstige Störungen in der Lieferkette (beispielsweise aufgrund von höherer Gewalt) gegeben sind oder wenn wir im Einzelfall zur Beschaffung nicht verpflichtet sind.
+         \item Ob ein Lieferverzug von uns als Verkäufer gegeben ist, bestimmt sich nach den gesetzlichen Vorschriften. Voraussetzung für einen Lieferverzug von uns als Verkäufer ist jedoch eine Mahnung von Seiten des Käufers. Für den Fall, dass ein Lieferverzug gegeben ist, kann der Käufer den pauschalierten Ersatz seines Verzugsschadens geltend machen. Die Schadenspauschale beträgt für jede vollendete Kalenderwoche des Verzugs \qty{0.5}{\percent} des Nettopreises (Lieferwert), insgesamt jedoch höchstens \qty{5}{\percent} des Lieferwerts der verspätet gelieferten Ware. Wir behalten uns einen entsprechenden Nachweis vor, dass dem Käufer kein Schaden oder lediglich ein geringerer Schaden als die vorstehende Pauschale entstanden ist.
+         \item Die Rechte des Käufers gemäß Ziffer \ref{ref:verjaehrung} dieser allgemeinen Verkaufsbedingungen und unsere gesetzlich normierten Rechte, insbesondere im Falle eines Ausschlusses der Leistungspflicht (z.B. aufgrund Unmöglichkeit oder Unzumutbarkeit der Leistung und/oder Nacherfüllung), bleiben unberührt.
+        \end{enumerate}
+        \item \textbf{Lieferung, Gefahrübergang, Abnahme, Annahmeverzug}%
+        \begin{enumerate}
+          \item Die Lieferung erfolgt ab Lager. Bei dem Lager handelt es sich auch um den Erfüllungsort für die Lieferung sowie um den Ort für eine etwaige Nacherfüllung. Für den Fall, dass der Käufer die Ware an einen anderen Bestimmungsort versandt haben möchte (Versendungskauf), hat er die Kosten für die Versendung zu tragen. Für den Fall, dass vertraglich nichts vereinbart wurde, können wir selbst über die Art des Versands (Verpackung, Versandweg, Transportunternehmen) bestimmen.
+          \vfill\null
+          \columnbreak
+          \item Mit der Übergabe der Ware an den Käufer geht die Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung auf den Käufer über. Im Rahmen eines Versendungskaufs geht die Gefahr des zufälligen Untergangs der Ware, der zufälligen Verschlechterung der Ware sowie die Verzögerungsgefahr bereits mit Auslieferung der Ware an den Spediteur oder den Frachtführer über. Für den Fall der vertraglichen Vereinbarung einer Abnahme der Ware ist diese für den Gefahrübergang maßgeblich. Weitergehende gesetzliche Vorschriften des Werkvertragsrechts bleiben unberührt. Der Übergabe bzw. der Abnahme der Ware steht es gleich, wenn der Käufer im Verzug der Annahme ist.
+          \item Für den Fall, dass sich der Käufer in Annahmeverzug befindet oder sich unsere Lieferung aus anderen, vom Käufer zu vertretenden Gründen verzögert, haben wir gegen den Käufer einen Anspruch auf Ersatz des entstandenen Schadens einschließlich der Mehraufwendungen (z.B. Lagerkosten). Bei Lagerung in unserem Werk können wir \qty{0,5}{\percent} des Netto-Rechnungsbetrages für jeden angebrochenen Monat maximal jedoch \qty{5}{\percent} berechnen. Gesetzliche Ansprüche unsererseits (Ersatz von Mehraufwendungen, angemessene Entschädigung, Kündigung) sowie der Nachweis eines höheren Schadens bleiben unberührt.
+          \item Der Nachweis eines höheren Schadens und unsere gesetzlichen Ansprüche (insbesondere Ersatz von Mehraufwendungen, angemessene Entschädigung, Kündigung) bleiben unberührt; die Pauschale ist aber auf weitergehende Geldansprüche anzurechnen. Dem Käufer bleibt jedoch der Nachweis vorbehalten, dass uns überhaupt kein oder nur ein wesentlich geringerer Schaden als vorstehende Pauschale entstanden ist.
+        \end{enumerate}
+        \item \textbf{Eigentumsvorbehalt}%
+          \begin{enumerate}
+          \item Wir behalten uns das Eigentum an der gelieferten Ware bis zur vollständigen Bezahlung aller unserer gegenwärtigen und künftigen Forderungen aus dem Kaufvertrag und einer laufenden Geschäftsbeziehung (gesicherte Forderungen) vor.
+          \item \label{ref:vollstaendige_zahlung}Bevor nicht eine vollständige Bezahlung der gesicherten Forderungen erfolgt ist, dürfen die unter Eigentumsvorbehalt stehenden Waren weder an Dritte verpfändet noch zur Sicherheit übereignet werden. Der Käufer hat uns unverzüglich für den Fall, dass ein Antrag auf Eröffnung eines Insolvenzverfahrens gestellt oder, soweit Zugriffe Dritter (z.B. Pfändungen) auf die uns gehörenden Waren erfolgen, schriftlich zu benachrichtigen. Soweit der Dritte nicht in der Lage ist, uns die gerichtlichen und außergerichtlichen Kosten einer Klage gemäß § 771 ZPO zu erstatten, haftet der Käufer für den uns entstandenen Ausfall.
+          \item \label{ref:ausfall_ruecktritt} Für den Fall eines vertragswidrigen Verhaltens des Käufers, insbesondere bei Nichtzahlung des fälligen Kaufpreises, sind wir berechtigt, nach den gesetzlichen Vorschriften vom Vertrag zurückzutreten oder/und die Ware auf Grund des Eigentumsvorbehalts heraus zu verlangen. Im Herausgabeverlangen ist nicht zugleich eine Rücktrittserklärung enthalten; vielmehr sind wir berechtigt, lediglich die Ware heraus zu verlangen und uns den Rücktritt vorzubehalten. Für den Fall, dass der Käufer den fälligen Kaufpreis nicht bezahlt, müssen wir dem Käufer vor Geltendmachung dieser Rechte erfolglos eine angemessene Frist zur Zahlung gesetzt haben. Dies gilt nur, sofern eine derartige Fristsetzung nach den gesetzlichen Vorschriften nicht entbehrlich ist.
+          \item Der Käufer ist bis auf Widerruf gemäß Ziffer \ref{ref:kaeufer_forderung} befugt, die unter Eigentumsvorbehalt stehenden Waren im ordnungsgemäßen Geschäftsgang weiter zu veräußern und/oder zu verarbeiten. Für diesen Fall gelten die nachfolgenden Bestimmungen ergänzend:%
+            \begin{enumerate}
+            \item Der Käufer tritt uns bereits zum jetzigen Zeitpunkt insgesamt bzw. in Höhe unseres etwaigen Miteigentumsanteils zu Sicherungszwecken die aus dem Weiterverkauf der Ware entstehenden Forderungen gegen Dritte in Höhe des mit uns vereinbarten Faktura-Endbetrages (einschließlich Mehrwertsteuer) ab. Die Abtretung nehmen wir an. Die gemäß Ziffer \ref{ref:vollstaendige_zahlung} aufgeführten Pflichten des Käufers gelten auch in Ansehung der abgetretenen Forderungen.
+            \item \label{ref:kaeufer_forderung}Der Käufer bleibt neben uns zur Einziehung der Forderung ermächtigt. Solange der Käufer seinen Zahlungsverpflichtungen uns gegenüber nachkommt, kein Mangel der Leistungsfähigkeit des Käufers vorliegt und wir den Eigentumsvorbehalt nicht durch Ausübung eines Rechts gemäß Ziffer \ref{ref:ausfall_ruecktritt} geltend machen, verpflichten wir uns, die Forderung nicht einzuziehen. Sofern wir die Ausübung eines Rechts gemäß Ziffer \ref{ref:ausfall_ruecktritt} geltend machen, können wir vom Käufer die Bekanntmachung der abgetretenen Forderungen und deren Schuldner verlangen, sowie dass der Käufer alle zum Einzug erforderlichen Angaben macht, die dazugehörigen Unterlagen aushändigt und den Schuldnern (Dritten) die Abtretung mitteilt. Darüber hinaus sind wir berechtigt, die Weiterveräußerungsbefugnis des Käufers sowie dessen Befugnis zur Verarbeitung der unter Eigentumsvorbehalt stehenden Waren zu widerrufen.
+            \item Für den Fall, dass der realisierbare Wert der Sicherheiten unsere Forderungen um mehr als \qty{10}{\percent} übersteigt, geben wir auf Verlangen des Käufers Sicherheiten nach unserer Wahl frei.
+            \item Der Käufer ist verpflichtet, solange das Eigentum noch nicht auf ihn übergegangen ist, die Kaufsache pfleglich zu behandeln. Insbesondere ist er verpflichtet, diese auf eigene Kosten gegen Diebstahl-, Feuer- und Wasserschäden ausreichend zum Neuwert zu versichern (Hinweis: nur zulässig bei Verkauf hochwertiger Güter). Müssen Wartungs- und Inspektionsarbeiten durchgeführt werden, hat der Käufer diese auf eigene Kosten rechtzeitig auszuführen.
+            \end{enumerate}
+          \end{enumerate}
+          \item \textbf{Mängelansprüche des Käufers}%
+            \begin{enumerate}
+             \item Für die Rechte des Käufers bei Sach- und Rechtsmängeln (einschließlich Falsch- und Minderlieferung sowie unsachgemäßer Montage/Installation oder mangelhafter Anleitungen) gelten die gesetzlichen Vorschriften, soweit nachfolgend nichts anderes bestimmt ist. Hiervon unberührt bleiben die gesetzlichen Bestimmungen über den Verbrauchsgüterkauf (§§ 474 ff. BGB) und die Rechte des Käufers aus gesondert abgegebenen Garantien, insbesondere von Seiten des Herstellers.
+             \item \label{ref:vereinbarungen} Vereinbarungen, welche wir hinsichtlich der Beschaffenheit und die vorausgesetzte Verwendung der Ware (umfasst sind auch Zubehör und Anleitungen) mit Käufern getroffen haben, bilden regelmäßig die Grundlage unserer Mängelhaftung im Rahmen der Gewährleistung. Eine Beschaffenheitsvereinbarung umfasst alle Produktbeschreibungen sowie Herstellerangaben, die Gegenstand des einzelnen Vertrages sind oder von uns (insbesondere in Katalogen oder auf unserer Internet-Homepage) zum Zeitpunkt des Vertragsschlusses öffentlich bekannt gemacht waren. Für den Fall, dass keine Beschaffenheit vereinbart wurde, ist nach der Vorschrift des § 434 Absatz 3 BGB zu beurteilen, ob ein Mangel gegeben ist. Vor diesem Hintergrund ist zu beachten, dass öffentlich getätigte Äußerungen des Herstellers im Rahmen von Werbung oder auf dem Etikett der Ware den Äußerungen sonstiger Dritter vorgehen.
+             \item Für Waren mit digitalen Elementen oder sonstigen digitalen Inhalten ist zu beachten, dass wir nur verpflichtet sind, eine Bereitstellung sowie eine Aktualisierung der digitalen Inhalte vorzunehmen, soweit sich dies ausdrücklich aus einer Beschaffenheitsvereinbarung gemäß Ziffer \ref{ref:vereinbarungen} ergibt. Wir übernehmen keine Haftung für öffentliche Äußerungen des Herstellers und sonstiger Dritter.
+             \item Für Mängel, die der Käufer gemäß § 442 BGB bei Vertragsschluss kennt oder grob fahrlässig nicht kennt, haften wir nicht.
+             \item Mängelansprüche des Käufers bestehen nur, soweit der Käufer seinen gesetzlichen Untersuchungs- und Anzeigepflichten (§§ 377, 381 HGB) nachgekommen ist. Eine schriftliche Anzeige an uns hat unverzüglich zu erfolgen, sofern sich im Rahmen der Lieferung, der Untersuchung oder zu einem späteren Zeitpunkt ein Mangel zeigt. Schriftlich anzuzeigen sind offensichtliche Mängel innerhalb von zehn Arbeitstagen ab Lieferung und nicht erkennbare Mängel innerhalb der gleichen Frist ab Feststellung der Mängel. Für den Fall, dass der Käufer seine Verpflichtung zur ordnungsgemäßen Untersuchung und/oder Mängelzeige versäumt oder nicht wahrnimmt, ist eine Haftung unsererseits für den nicht bzw. nicht rechtzeitig oder nicht ordnungsgemäß angezeigten Mangel nach den gesetzlichen Vorschriften ausgeschlossen. Sofern die Ware zum Einbau, zur Anbringung oder zur Installation bestimmt war, gilt dies auch dann, wenn der Mangel infolge der Nichteinhaltung bzw. Verletzung einer dieser Pflichten erst nach der entsprechenden Verarbeitung offenkundig wurde. Für diesen Fall stehen dem Käufer keine Ansprüche auf Ersatz der \enquote{Ein- und Ausbaukosten} zu.
+             \item \label{ref:nacherfuellung}Sofern die gelieferte Ware mangelhaft sein sollte, steht uns als Verkäufer ein Wahlrecht zu, ob wir eine Nacherfüllung durch Beseitigung des Mangels (Nachbesserung) oder durch Lieferung einer mangelfreien Sache (Nachlieferung) erbringen. Für den Fall, dass die von uns gewählte Art der Nacherfüllung für den Käufer im Einzelfall unzumutbar ist, kann er sie verweigern. Es bleibt uns jedoch vorbehalten, die Nacherfüllung unter den gesetzlichen Voraussetzungen zu verweigern. Zudem sind wir berechtigt, die von uns zu erbringende Nacherfüllung davon abhängig zu machen, dass der Käufer den fälligen Kaufpreis bezahlt. Dem Käufer steht jedoch das Recht zu, einen im Verhältnis zum Mangel angemessenen Teil des Kaufpreises zurückzubehalten.
+             \vfill\null
+             \columnbreak
+             \item Für die zu leistende Nacherfüllung hat der Käufer uns die notwendige Zeit und Gelegenheit einzuräumen. Insbesondere hat der Käufer uns die Sache, für welche er einen Mangel geltend gemacht hat, zu Prüfungszwecken zu übergeben. Für den Fall, dass wir eine Nachlieferung einer mangelfreien Sache durchführen, hat der Käufer uns die mangelhafte Sache nach den gesetzlichen Vorschriften zurückzugeben. Einen Rückgabeanspruch steht dem Käufer jedoch nicht zu.
+             \item Sofern wir uns vertraglich nicht dazu verpflichtet haben, umfasst die Nacherfüllung weder den Ausbau, die Entfernung oder Deinstallation der mangelhaften Sache noch den Einbau, die Anbringung oder die Installation einer mangelfreien Sache. Hiervon unberührt bleiben Ansprüche des Käufers auf Ersatz der \enquote{Ein- und Ausbaukosten}.
+             \item Die Aufwendungen, welche zu Prüfungszwecken und zur Nacherfüllung notwendig sind (Transport-, Arbeits-, und Materialkosten sowie ggf. Aus- und Einbaukosten), erstatten wir nach Maßgabe der gesetzlichen Vorschriften sowie diesen allgemeinen Verkaufsbedingungen für den Fall, dass ein Mangel vorliegt. Wir können jedoch vom Käufer aufgrund eines unberechtigten Mangelbeseitigungsverlangens entstandenen Kosten für den Fall erstattet verlangen, dass der Käufer wusste oder hätte erkennen können, dass tatsächlich kein Mangel vorliegt.
+             \item Der Käufer hat das Recht, den Mangel selbst zu beseitigen und den Ersatz der hierzu objektiv erforderlichen Aufwendungen zu verlangen, wenn ein dringender Fall vorliegt (z.B. bei Gefahr in Bezug auf die Betriebssicherheit oder zur Abwehr unverhältnismäßiger Schäden). Der Käufer hat uns im Falle einer Selbstvornahme unverzüglich zu informieren. Für den Fall, dass wir berechtigt wären, eine Nacherfüllung nach den gesetzlichen Vorschriften zu verweigern, hat der Käufer kein Recht zur Selbstvornahme.
+             \item Der Käufer kann nach den gesetzlichen Vorschriften vom Kaufvertrag zurücktreten oder den Kaufpreis mindern, wenn eine vom Käufer für die Nacherfüllung zu setzende Frist erfolglos abgelaufen ist oder nach den gesetzlichen Vorschriften entbehrlich ist. Für den Fall eines nicht erheblichen Mangels steht dem Käufer jedoch kein Rücktrittsrecht zu.
+             \item Ansprüche des Käufers auf Aufwendungsersatz gemäß § 445a Absatz 1 BGB sind ausgeschlossen, es sei denn, dass es sich bei dem letzten Vertrag in der Lieferkette um einen Verbrauchsgüterkauf (§§ 478, 474 BGB) oder um einen Verbrauchervertrag über die Bereitstellung digitaler Produkte (§§ 445c Satz 2, 327 Absatz 5, 327u BGB) handelt.
+             \item Schadensersatzansprüche oder Ansprüche auf Ersatz vergeblicher Aufwendungen des Käufers (§ 284 BGB) bestehen auch bei Vorliegen eines Mangels lediglich nach Maßgabe von Ziffer \ref{ref:verjaehrung} und Ziffer \ref{ref:sonstige_haftung}.
+            \end{enumerate}
+          \item \textbf{Verjährung} \label{ref:verjaehrung}%
+            \begin{enumerate}
+            \item Die Allgemeine Verjährungsfrist für Ansprüche, welche aus Sach- oder Rechtsmängeln resultieren, beträgt abweichend von § 438 Absatz 1 Nr. 3 BGB ein Jahr ab Ablieferung. Für den Fall, dass eine Abnahme vertraglich vereinbart wurde, beginnt die Verjährung mit Abnahme.
+            \item Die vorstehenden Verjährungsfristen des Kaufrechts finden auch für vertragliche und außervertragliche Schadensersatzansprüche des Käufers Anwendung, die auf einem Mangel der Ware beruhen, es sei denn, dass die Anwendung der regelmäßigen gesetzlichen Verjährung gemäß der §§ 195, 199 BGB im Einzelfall zu einer kürzeren Verjährung führen würde. Schadensersatzansprüche des Käufers gemäß Ziffer \ref{ref:sonstige_haftung_verkaeufer} und \ref{ref:sonstige_haftung_verkaeufer_schaeden}) sowie solche nach dem Produkthaftungsgesetz verjähren ausschließlich nach den gesetzlichen Verjährungsfristen.
+            \end{enumerate}
+          \item \textbf{Sonstige Haftung} \label{ref:sonstige_haftung}%
+            \begin{enumerate}
+            \item \label{ref:sonstige_haftung_verkaeufer}Wir als Verkäufer haften, soweit sich aus diesen allgemeinen Verkaufsbedingungen, einschließlich der nachfolgenden Bestimmungen, nichts anderes ergibt, bei Verletzungen von vertraglichen und außervertraglichen Pflichten nach den gesetzlichen Maßgaben.
+            \item \label{ref:sonstige_haftung_verschuldungshaftung}Im Rahmen der Verschuldenshaftung haften wir, dahinstehend aus welchem Rechtsgrund, auf Schadensersatz, lediglich im Falle von Vorsatz und grober Fahrlässigkeit. Im Falle von einfacher Fahrlässigkeit haften wir, vorbehaltlich gesetzlicher Haftungsbeschränkungen (z.B. Sorgfalt in eigenen Angelegenheiten; unerhebliche Pflichtverletzung), nur:%
+              \begin{enumerate}
+              \item \label{ref:sonstige_haftung_verkaeufer_schaeden}für Schäden, die aus der Verletzung des Lebens, des Körpers oder der Gesundheit, resultieren,
+              \item für Schäden, die aus der Verletzung einer wesentlichen Vertragspflicht (Pflichten, deren Erfüllung die ordnungsgemäße Vertragsdurchführung erst ermöglicht und auf deren Einhaltung der Vertragspartner vertraut und auch vertrauen darf) resultieren. Unsere Haftung ist für diesen Fall jedoch auf den Ersatz des vorhersehbaren, typischerweise eintretenden Schadens limitiert.
+              \end{enumerate}
+            \vfill\null
+            \columnbreak
+            \item Die sich gemäß Ziffer \ref{ref:sonstige_haftung_verschuldungshaftung} ergebenden Haftungsbeschränkungen gelten auch gegenüber Dritten sowie bei Pflichtverletzungen durch Personen, deren Verschulden wir nach gesetzlichen Vorschriften zu vertreten haben. Soweit ein Mangel arglistig verschwiegen und eine Garantie für die Beschaffenheit der Ware übernommen wurde, finden die Haftungsbeschränkungen keine Geltung. Dies gilt ebenfalls für Ansprüche des Käufers nach dem Produkthaftungsgesetz.
+            \item Der Käufer kann wegen einer Pflichtverletzung, die nicht aus einem Mangel resultiert, nur für den Fall, dass wir als Verkäufer die Pflichtverletzung zu vertreten haben, zurücktreten oder kündigen.
+            \item Ein Kündigungsrecht des Käufers (insbesondere gemäß §§ 650, 648 BGB) wird ausgeschlossen. Im Übrigen gelten die gesetzlichen Voraussetzungen und Rechtsfolgen.
+            \end{enumerate}
+          \item \textbf{Rechtswahl und Gerichtsstand}%
+            \begin{enumerate}
+              \item Für diese allgemeinen Verkaufsbedingungen und die Vertragsbeziehung zwischen uns als Verkäufer und dem Käufer gilt das Recht der Bundesrepublik Deutschland unter Ausschluss internationalen Einheitsrechts, insbesondere des UN-Kaufrechts.
+              \item Handelt es sich bei dem Käufer um einen Kaufmann im Sinne des Handelsgesetzbuchs, eine juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen, ist unser Geschäftssitz in Viernheim ausschließlicher, und auch internationaler Gerichtsstand, für alle sich aus dem Vertragsverhältnis unmittelbar oder mittelbar ergebenden Streitigkeiten. Gleiches gilt, wenn der Käufer Unternehmer im Sinne von § 14 BGB ist.
+              \item Zur Erhebung einer Klage am Erfüllungsort der Lieferverpflichtung gemäß diesen allgemeinen Verkaufsbedingungen bzw. einer vorrangigen Individualabrede oder am allgemeinen Gerichtsstand des Käufers sind wir darüber hinaus berechtigt. Hiervon unberührt bleiben vorrangige gesetzliche Vorschriften (ausschließliche Gerichtsstände).
+            \end{enumerate}
+    \end{enumerate}
+  \end{multicols}
+\end{document}
