@@ -23,6 +23,9 @@ runs:
         args: -lualatex -cd "${{ inputs.tex-filename }}.tex"
 
     - name: Rename PDF if a different output filename was set
-      if: ${{ inputs.tex-filename != inputs.output-filename }}
-      run: mv "${{ inputs.tex-filename }}.pdf" "${{ inputs.output-filename }}.pdf"
+      run: |
+        if [ "${{ inputs.tex-filename }}" != "${{ inputs.output-filename }}" ]; then
+          echo "Renaming '${{ inputs.tex-filename }}.pdf' to '${{ inputs.output-filename }}.pdf'."
+          mv "${{ inputs.tex-filename }}.pdf" "${{ inputs.output-filename }}.pdf"
+        fi
       shell: bash
