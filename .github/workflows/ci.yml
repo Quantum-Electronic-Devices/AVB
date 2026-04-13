@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         tex_file:
-          - { name: 'agv', output: 'agv', description: 'Allgemeine Geschäftbedingungen (B2B)' }
+          - { name: 'avb', output: 'avb', description: 'Allgemeine Verkaufsbedingungen (B2B)' }
 
     steps:
       - name: Checkout
