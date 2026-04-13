@@ -40,6 +40,6 @@ runs:
 
     - name: Create visual diff
       run: |
-        mkdir -p  ${{ inputs.output-directory }}/
-        find ${{ inputs.directory-a }} -type f -name '*.pdf' -print0 | while read -d $'\0' i; do mkdir -p "${{ inputs.output-directory }}/$(basename -a "$i")" && python -m diff_pdf_visually "$i" "${{ inputs.directory-b }}/$(basename -a "$i")" --outdir "${{ inputs.output-directory }}/$(basename -a "$i")" --dpi ${{ inputs.dpi }}; done
+        mkdir -p  "${{ inputs.output-directory }}"/
+        find ${{ inputs.directory-a }} -type f -name "*.pdf" -print0 | while read -d $'\0' i; do mkdir -p "${{ inputs.output-directory }}/$(basename -a "$i")" && python -m diff_pdf_visually "$i" "${{ inputs.directory-b }}/$(basename -a "$i")" --outdir "${{ inputs.output-directory }}/$(basename -a "$i")" --dpi ${{ inputs.dpi }}; done
       shell: bash
