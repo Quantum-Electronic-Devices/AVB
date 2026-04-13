@@ -24,6 +24,8 @@ runs:
 
     - name: Rename PDF if a different output filename was set
       run: |
-        echo "Renaming '${{ inputs.tex-filename }}.pdf' to '${{ inputs.output-filename }}.pdf'" >> $GITHUB_STEP_SUMMARY
-        mv "${{ inputs.tex-filename }}.pdf" "${{ inputs.output-filename }}.pdf"
+        if [ "${{ inputs.tex-filename }}" != "${{ inputs.output-filename }}" ]; then
+          echo "Renaming '${{ inputs.tex-filename }}.pdf' to '${{ inputs.output-filename }}.pdf'." >> $GITHUB_OUTPUT
+          mv "${{ inputs.tex-filename }}.pdf" "${{ inputs.output-filename }}.pdf"
+        fi
       shell: bash
