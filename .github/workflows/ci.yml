@@ -51,6 +51,7 @@ jobs:
           name: PDF-${{ steps.pdf-basename.outputs.value }}
           path: ${{ steps.pdf-filename.outputs.value }}.pdf
           archive: false
+          if-no-files-found: error
           retention-days: 7
 
       - name: Append PDF as an asset
