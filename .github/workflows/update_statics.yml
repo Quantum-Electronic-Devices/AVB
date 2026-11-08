@@ -26,6 +26,6 @@ jobs:
           repository: ${{ matrix.static.repo }}
           version_file: ${{ matrix.static.version_file }}
           remote-token: ${{ secrets.QED_LOGO_PA }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.QED_BOT_PAT }}
           commit-user-name: qed-bot
           commit-user-id: 279461323
