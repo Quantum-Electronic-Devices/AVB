@@ -17,8 +17,9 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
-      pull-requests	: write
+      pull-requests: write
     strategy:
+      fail-fast: false # one failing source must not cancel the others
       matrix:
         static:
           - {repo: "Quantum-Electronic-Devices/Logos", version_file: ".logo_version"}
