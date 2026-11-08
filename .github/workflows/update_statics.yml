@@ -29,7 +29,7 @@ jobs:
           persist-credentials: false
 
       - name: Update statics
-        uses: Quantum-Electronic-Devices/sync_assets@758fe0bff274ffaefce6d163d47b91173fbb364c # v1.2.0
+        uses: Quantum-Electronic-Devices/sync_assets@2890caf68c4623fc75fd6bc4c0708798c56cd8ac # v1.2.1
         with:
           repository: ${{ matrix.static.repo }}
           version_file: ${{ matrix.static.version_file }}
